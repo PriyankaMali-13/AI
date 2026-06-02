@@ -39,14 +39,16 @@ As this repo grows, each topic will get its own folder so everything stays organ
 
 ```
 AI/
-├── rag-app/          ← RAG Document Q&A (Node.js + Ollama)
-├── agents/           ← coming soon
-├── prompt-engineering/  ← coming soon
-├── aws-ai/           ← coming soon
+├── rag-app/              ← RAG Document Q&A (Node.js + Ollama)
+├── chatbot-app/          ← Conversational Chatbot (Node.js + Ollama)
+├── similarity-app/       ← Document Similarity Checker (Node.js + Ollama)
+├── agents/               ← coming soon
+├── prompt-engineering/   ← coming soon
+├── aws-ai/               ← coming soon
 └── ...
 ```
 
-Each folder will have its own `README.md` explaining what the project does and how to run it.
+Each folder has its own `README.md` explaining what the project does and how to run it.
 
 ---
 
@@ -55,6 +57,8 @@ Each folder will have its own `README.md` explaining what the project does and h
 | # | Project | Description | Tech |
 |---|---------|-------------|------|
 | 01 | [rag-app](./rag-app/) | Local RAG system — paste a doc, ask questions, get answers from your document only. No API keys, no cloud. | Node.js, Ollama, nomic-embed-text, llama3.2 |
+| 02 | [chatbot-app](./chatbot-app/) | Conversational chatbot with memory — chat back and forth with a local LLM that remembers the full conversation history. No API keys, no cloud. | Node.js, Ollama, llama3.2 |
+| 03 | [similarity-app](./similarity-app/) | Document Similarity Checker — compare two texts or rank a list by similarity using embeddings and cosine similarity math. No API keys, no cloud. | Node.js, Ollama, nomic-embed-text |
 | — | More coming soon... | | |
 
 ---
@@ -63,6 +67,8 @@ Each folder will have its own `README.md` explaining what the project does and h
 
 ### ✅ Done
 - [x] Built a local RAG pipeline from scratch (chunking → embeddings → vector DB → LLM)
+- [x] Built a conversational chatbot with memory using a local LLM
+- [x] Built a document similarity checker using embeddings and cosine similarity
 - [x] Understood how cosine similarity works for semantic search
 - [x] Ran LLMs locally using Ollama
 
