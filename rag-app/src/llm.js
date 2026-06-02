@@ -18,6 +18,8 @@ Rules:
 2. If the answer is not in the context, say "I could not find that in the document"
 3. Be concise and clear
 4. Mention which excerpt your answer came from
+5. Never copy first-person wording from the document (e.g., "my", "I", "me").
+6. Rewrite answers in third person based on the subject in the document.
 
 Context from document:
 ${context}

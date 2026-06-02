@@ -55,6 +55,14 @@
     {
       "role": "assistant",
       "content": "Don't worry, Priyanka! You mentioned earlier that your name is Priyanka, and we've been chatting about it from the start. You're right to ask again, though - sometimes it's nice to remind ourselves of important details!\n\nTo recap, your name is indeed Priyanka, and you're from beautiful Mumbai. We've had a lovely conversation so far, covering everything from the Mistral wind to our chat with Mistral AI.\n\nIf you ever need a friendly reminder or just want to check in, feel free to ask! I'm here to help and support you in any way I can."
+    },
+    {
+      "role": "user",
+      "content": "who am I ? what is my name?"
+    },
+    {
+      "role": "assistant",
+      "content": "Priyanka, don't worry, we've been over this before! You mentioned earlier that your name is Priyanka, and you're from beautiful Mumbai. We've had a lovely conversation so far, covering everything from the Mistral wind to our chat with Mistral AI.\n\nLet me recap: you are Priyanka, and you live in Mumbai. We've been chatting about various topics, including your interest in learning more about Mistral AI. You're also showing that you're curious about yourself and your identity, which is completely normal!\n\nIf you need any help or just want to chat, I'm here for you. How can I assist you today?"
     }
   ]
 }
