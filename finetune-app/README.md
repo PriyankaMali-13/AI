@@ -129,12 +129,50 @@ const question = "What is a closure in JavaScript?";
 
 ## Real Fine-Tuning Workflow
 
-This app simulates fine-tuning via a Modelfile. Real fine-tuning retrains the model weights:
+This app simulates fine-tuning via a Modelfile. Real fine-tuning retrains the model weights.
 
+Think of it like **training a new employee**. You hire a general employee (the base model — llama3.2). They know a lot of general stuff but don't know your company's specific way of doing things. Fine-tuning is like putting them through a training program using your company's data — after training, they respond exactly the way you need.
+
+### Step 1 — Collect Training Data
+Create a file with question + answer pairs that show how you want the model to behave.
+```json
+{ "question": "What is our refund policy?", "answer": "We offer 30-day returns..." }
+{ "question": "How do I reset my password?", "answer": "Go to settings > security..." }
 ```
-1. Collect training data   →  data/training.jsonl
-2. Train with Unsloth      →  https://github.com/unslothai/unsloth
-3. Export as GGUF          →  model.save_pretrained_gguf(...)
-4. Load into Ollama        →  FROM ./my-finetuned.gguf  (in Modelfile)
-5. Run                     →  ollama run my-model
+> Like writing the training manual for your new employee.
+
+### Step 2 — Train with a Tool (Unsloth / Axolotl)
+Feed those Q&A pairs into a training tool. It adjusts the model's internal numbers (weights) so it learns your patterns. This happens on a GPU (your computer or free Google Colab).
+> Like the employee actually studying the manual.
+
+### Step 3 — Export as GGUF
+After training, convert the model into a format Ollama understands — called GGUF.
+> Like the employee getting a new ID card after completing training.
+
+### Step 4 — Load into Ollama via Modelfile
+Tell Ollama to use the newly trained model by pointing the `FROM` line to your GGUF file.
 ```
+FROM ./my-finetuned.gguf
+SYSTEM "You are a customer support agent..."
+```
+> Like the trained employee reporting to work.
+
+### Step 5 — Use it
+```bash
+ollama run my-expert
+```
+Now it answers like a **specialist**, not a generalist.
+
+---
+
+## This App vs Real Fine-Tuning
+
+| | This App | Real Fine-Tuning |
+|---|---|---|
+| What changes | SYSTEM prompt only | Actual model weights |
+| Like... | Giving rules to follow | Actually learning & memorising |
+| Speed | Seconds | Minutes to hours |
+| GPU needed | ❌ No | ✅ Yes |
+| Permanent? | ❌ No (lost if prompt removed) | ✅ Yes (baked into model) |
+
+> **One line summary:** This app *tells* the model how to behave. Real fine-tuning *teaches* the model by retraining it on your data — the knowledge becomes permanent.
