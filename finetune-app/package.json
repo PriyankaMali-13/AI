@@ -1,0 +1,17 @@
+{
+  "name": "finetune-app",
+  "version": "1.0.0",
+  "description": "Learn fine-tuning concepts with local Ollama",
+  "main": "src/finetune.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/finetune.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "node-fetch": "^3.3.2"
+  }
+}
