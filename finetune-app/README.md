@@ -55,6 +55,10 @@ ollama-finetune-demo/
 └── README.md
 ```
 
+> **Note:** `Modelfile` is not committed to the repository because it is auto-generated every time you run the app.
+> The app creates it fresh on each run via `writeFileSync("Modelfile", ...)` before calling `ollama create`.
+> You do not need to create it manually.
+
 ---
 
 ## How it works
