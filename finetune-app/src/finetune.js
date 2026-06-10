@@ -1,5 +1,4 @@
 // Simple Ollama Fine-Tuning Demo
-// Run: node app.js
 
 import { writeFileSync } from "fs";
 import { execSync } from "child_process";
