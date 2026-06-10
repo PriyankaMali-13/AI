@@ -42,6 +42,7 @@ AI/
 ├── rag-app/              ← RAG Document Q&A (Node.js + Ollama)
 ├── chatbot-app/          ← Conversational Chatbot (Node.js + Ollama)
 ├── similarity-app/       ← Document Similarity Checker (Node.js + Ollama)
+├── finetune-app/         ← Fine-Tuning Demo (Node.js + Ollama)
 ├── agents/               ← coming soon
 ├── prompt-engineering/   ← coming soon
 ├── aws-ai/               ← coming soon
@@ -59,6 +60,7 @@ Each folder has its own `README.md` explaining what the project does and how to 
 | 01 | [rag-app](./rag-app/) | Local RAG system — paste a doc, ask questions, get answers from your document only. No API keys, no cloud. | Node.js, Ollama, nomic-embed-text, llama3.2 |
 | 02 | [chatbot-app](./chatbot-app/) | Conversational chatbot with memory — chat back and forth with a local LLM that remembers the full conversation history. No API keys, no cloud. | Node.js, Ollama, llama3.2 |
 | 03 | [similarity-app](./similarity-app/) | Document Similarity Checker — compare two texts or rank a list by similarity using embeddings and cosine similarity math. No API keys, no cloud. | Node.js, Ollama, nomic-embed-text |
+| 04 | [finetune-app](./finetune-app/) | Fine-Tuning Demo — compare a base model vs a custom model built with a Modelfile. Understand how fine-tuning shapes model behavior. No API keys, no cloud. | Node.js, Ollama, llama3.2 |
 | — | More coming soon... | | |
 
 ---
@@ -71,6 +73,7 @@ Each folder has its own `README.md` explaining what the project does and how to 
 - [x] Built a document similarity checker using embeddings and cosine similarity
 - [x] Understood how cosine similarity works for semantic search
 - [x] Ran LLMs locally using Ollama
+- [x] Explored fine-tuning basics — base model vs custom model using Modelfile
 
 ### 🔄 In Progress
 - [ ] Exploring AI Agents and tool-use patterns
@@ -80,7 +83,7 @@ Each folder has its own `README.md` explaining what the project does and how to 
 - [ ] Build a simple AI agent with memory
 - [ ] Experiment with AWS Bedrock
 - [ ] Try LangChain for chaining LLM calls
-- [ ] Explore fine-tuning basics
+- [ ] Explore advanced fine-tuning with real model retraining (Unsloth / Axolotl)
 - [ ] Build a multi-document RAG system
 - [ ] Integrate a proper vector database (ChromaDB / Pinecone)
 
