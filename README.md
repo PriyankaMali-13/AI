@@ -29,7 +29,7 @@ Here are the topics and technologies I am diving into:
 | 🗄️ **Vector Databases** | Embeddings, cosine similarity, semantic search |
 | 🔌 **APIs & SDKs** | OpenAI, Anthropic (Claude), Ollama, Hugging Face |
 | ☁️ **AWS AI Services** | Bedrock, SageMaker, Rekognition, Comprehend, Textract |
-| 🐍 **Tools & Frameworks** | Node.js, Python, LangChain, LlamaIndex |
+| 🐍 **Tools & Frameworks** | Node.js, LangChain, LlamaIndex |
 
 ---
 
