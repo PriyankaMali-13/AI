@@ -31,7 +31,7 @@ ollama serve
 
 ```bash
 git clone <repo-url>
-cd ollama-finetune-demo
+cd finetune-app
 npm install
 ```
 
@@ -40,7 +40,13 @@ npm install
 ## Run
 
 ```bash
-node app.js
+node src/finetune.js
+```
+
+Or using npm:
+
+```bash
+npm start
 ```
 
 ---
@@ -48,10 +54,11 @@ node app.js
 ## Project Structure
 
 ```
-ollama-finetune-demo/
-├── app.js        ← main file (ask base model, create custom model, compare)
-├── Modelfile     ← auto-generated when app runs (do not edit manually)
+finetune-app/
+├── src/
+│   └── finetune.js   ← main file (ask base model, create custom model, compare)
 ├── package.json
+├── .gitignore
 └── README.md
 ```
 
@@ -88,7 +95,7 @@ ask("codebot:latest", "", question)
 
 ## Change the question
 
-Edit line 33 in `app.js`:
+Edit line 33 in `src/finetune.js`:
 
 ```js
 const question = "What is a closure in JavaScript?";
