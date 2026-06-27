@@ -1,150 +1,116 @@
-# Desktop Personality Analyzer
+# 🤖 AI Learning Journey
 
-An AI-powered backend that analyzes a desktop screenshot and generates observations based on different personalities — serious, interview, or roast.
-
----
-
-## What this app does
-
-1. Accepts a **desktop screenshot** via a `POST /analyze` API
-2. Converts the image to **Base64** and sends it to a **NVIDIA vision model**
-3. Returns a personality-based analysis depending on the **mode** selected:
-   - `serious` — professional productivity observations
-   - `interview` — technical interviewer perspective
-   - `roast` — savage but harmless internet-style roast
+![AI](https://img.shields.io/badge/AI-Learning%20Journey-blue?style=for-the-badge&logo=openai&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Actively%20Learning-brightgreen?style=for-the-badge)
+![Made With](https://img.shields.io/badge/Made%20With-Curiosity%20%26%20Coffee-orange?style=for-the-badge)
 
 ---
 
-## Prerequisites
+## 👋 About This Repository
 
-- [Node.js](https://nodejs.org/) v18+
-- NVIDIA API key from [build.nvidia.com](https://build.nvidia.com)
+This is my personal AI learning space.
 
----
+I created this repository to document and share everything I build, experiment with, and learn as I explore the world of Artificial Intelligence. You will find hands-on projects, mini experiments, code snippets, notes, and anything else I pick up along the way — from beginner concepts to more advanced topics.
 
-## Setup
-
-```bash
-git clone <repo-url>
-cd desktop-analyzer
-npm install
-```
-
-Create a `.env` file in the root:
-
-```
-NVIDIA_API_KEY=your_api_key_here
-PORT=3000
-```
+The goal is simple: **learn by doing**. Every folder here represents something I actually sat down and built or studied — not just read about.
 
 ---
 
-## Run
+## 🧠 What I'm Exploring
 
-```bash
-node app.js
-```
+Here are the topics and technologies I am diving into:
 
-Or using npm:
-
-```bash
-npm start
-```
-
----
-
-## API
-
-### `POST /analyze`
-
-**Request:** `multipart/form-data`
-
-| Field | Type | Required | Description |
-|---|---|---|---|
-| image | File | Yes | Desktop screenshot (PNG, JPEG, WebP) |
-| mode | Text | Yes | `serious`, `interview`, or `roast` |
-
-**Success Response:**
-```json
-{
-    "result": "Your desktop has more icons than..."
-}
-```
-
-**Error Responses:**
-```json
-{ "message": "Image is required" }
-{ "message": "Mode is required" }
-{ "message": "Invalid mode. Must be serious, interview or roast" }
-{ "message": "Invalid file type. Only PNG, JPEG, and WebP images are allowed!" }
-```
+| Area | Topics |
+|---|---|
+| 🦙 **LLMs** | Large Language Models, how they work, how to use them locally and via APIs |
+| 🔍 **RAG** | Retrieval-Augmented Generation, vector search, document Q&A |
+| 🤖 **AI Agents** | Autonomous agents, tool use, multi-step reasoning |
+| ✍️ **Prompt Engineering** | Writing effective prompts, few-shot learning, chain-of-thought |
+| 🗄️ **Vector Databases** | Embeddings, cosine similarity, semantic search |
+| 🔌 **APIs & SDKs** | OpenAI, Anthropic (Claude), Ollama, Hugging Face |
+| ☁️ **AWS AI Services** | Bedrock, SageMaker, Rekognition, Comprehend, Textract |
+| 🐍 **Tools & Frameworks** | Node.js, LangChain, LlamaIndex |
 
 ---
 
-## Project Structure
+## 📁 Folder Structure
+
+As this repo grows, each topic will get its own folder so everything stays organized and easy to navigate.
 
 ```
-desktop-analyzer/
-├── src/
-│   ├── routes/
-│   │   └── analyze.js         ← POST /analyze route with validation
-│   ├── middlewares/
-│   │   └── upload.js          ← Multer config (memory storage, file type filter)
-│   ├── services/
-│   │   ├── visionService.js   ← NVIDIA API call, Base64 conversion
-│   │   └── promptService.js   ← Returns prompt based on mode
-│   ├── prompts/
-│   │   ├── serious.js         ← Serious mode prompt
-│   │   ├── interview.js       ← Interview mode prompt
-│   │   └── roast.js           ← Roast mode prompt
-│   └── config/
-├── app.js                     ← Express app entry point
-├── .env                       ← API keys (not committed)
-├── .gitignore
-└── package.json
+AI/
+├── rag-app/              ← RAG Document Q&A (Node.js + Ollama)
+├── chatbot-app/          ← Conversational Chatbot (Node.js + Ollama)
+├── similarity-app/       ← Document Similarity Checker (Node.js + Ollama)
+├── finetune-app/         ← Fine-Tuning Demo (Node.js + Ollama)
+├── agents/               ← coming soon
+├── prompt-engineering/   ← coming soon
+├── aws-ai/               ← coming soon
+└── ...
 ```
+
+Each folder has its own `README.md` explaining what the project does and how to run it.
 
 ---
 
-## How it works
+## 🚀 Projects & Experiments
 
-### Upload & Validation
-Multer intercepts the multipart request, stores the image in memory as a Buffer, and rejects non-image files before they reach the route.
-
-### Base64 Conversion
-```js
-const image = imageBuffer.toString('base64');
-// → sends as data:image/png;base64,<encoded string>
-```
-
-### Vision Model
-The image and prompt are sent to NVIDIA's vision model:
-```
-model: meta/llama-3.2-11b-vision-instruct
-```
-
-### Prompt Service
-Each mode has its own prompt file with a persona, style guidelines, and output format. The `promptService` selects the right one based on the `mode` field.
+| # | Project | Description | Tech |
+|---|---------|-------------|------|
+| 01 | [rag-app](./rag-app/) | Local RAG system — paste a doc, ask questions, get answers from your document only. No API keys, no cloud. | Node.js, Ollama, nomic-embed-text, llama3.2 |
+| 02 | [chatbot-app](./chatbot-app/) | Conversational chatbot with memory — chat back and forth with a local LLM that remembers the full conversation history. No API keys, no cloud. | Node.js, Ollama, llama3.2 |
+| 03 | [similarity-app](./similarity-app/) | Document Similarity Checker — compare two texts or rank a list by similarity using embeddings and cosine similarity math. No API keys, no cloud. | Node.js, Ollama, nomic-embed-text |
+| 04 | [finetune-app](./finetune-app/) | Fine-Tuning Demo — compare a base model vs a custom model built with a Modelfile. Understand how fine-tuning shapes model behavior. No API keys, no cloud. | Node.js, Ollama, llama3.2 |
+| — | More coming soon... | | |
 
 ---
 
-## Testing with Postman
+## 🗺️ Learning Roadmap
 
-1. Set method to `POST`
-2. URL: `http://localhost:3000/analyze`
-3. Body → `form-data`
-4. Add key `image` (type: File) → attach a screenshot
-5. Add key `mode` (type: Text) → `serious`, `interview`, or `roast`
+### ✅ Done
+- [x] Built a local RAG pipeline from scratch (chunking → embeddings → vector DB → LLM)
+- [x] Built a conversational chatbot with memory using a local LLM
+- [x] Built a document similarity checker using embeddings and cosine similarity
+- [x] Understood how cosine similarity works for semantic search
+- [x] Ran LLMs locally using Ollama
+- [x] Explored fine-tuning basics — base model vs custom model using Modelfile
+
+### 🔄 In Progress
+- [ ] Exploring AI Agents and tool-use patterns
+- [ ] Learning prompt engineering techniques
+
+### 📌 Up Next
+- [ ] Build a simple AI agent with memory
+- [ ] Experiment with AWS Bedrock
+- [ ] Try LangChain for chaining LLM calls
+- [ ] Explore advanced fine-tuning with real model retraining (Unsloth / Axolotl)
+- [ ] Build a multi-document RAG system
+- [ ] Integrate a proper vector database (ChromaDB / Pinecone)
 
 ---
 
-## Analysis Modes
+## 🎯 Future Goals
 
-### Serious
-Professional productivity consultant. Evaluates workspace organization, focus habits, and areas for improvement.
+- Build real-world AI-powered applications end to end
+- Get comfortable working with both local models and cloud AI services
+- Explore AWS AI/ML services and how they fit into production systems
+- Understand how AI agents make decisions and use tools
+- Document everything clearly so others can learn from it too
 
-### Interview
-Technical interviewer and career coach. Identifies signals of technical skills, learning habits, and career readiness.
+---
 
-### Roast
-Sharp-witted internet comedian. Roasts the desktop mercilessly but harmlessly with punchlines and exaggerations.
+## 🛠️ How to Use This Repo
+
+Each project folder is self-contained with its own setup instructions in its `README.md`. Just navigate to the folder you are interested in and follow the steps there.
+
+---
+
+## 📬 A Note
+
+I am learning in public. Some of this will be messy, some of it will be experiments that didn't quite work, and that's okay. The point is to keep building and keep learning.
+
+If you are on a similar journey, feel free to explore, fork, or reach out.
+
+---
+
+*This repository is actively maintained and updated as I learn.*
