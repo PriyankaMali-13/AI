@@ -43,6 +43,8 @@ AI/
 ├── chatbot-app/          ← Conversational Chatbot (Node.js + Ollama)
 ├── similarity-app/       ← Document Similarity Checker (Node.js + Ollama)
 ├── finetune-app/         ← Fine-Tuning Demo (Node.js + Ollama)
+├── prompt-tester/        ← Prompt Tester (Node.js + Ollama + NVIDIA)
+├── desktop-analyzer/     ← Desktop Personality Analyzer (Node.js + NVIDIA Vision API)
 ├── agents/               ← coming soon
 ├── prompt-engineering/   ← coming soon
 ├── aws-ai/               ← coming soon
@@ -61,6 +63,8 @@ Each folder has its own `README.md` explaining what the project does and how to 
 | 02 | [chatbot-app](./chatbot-app/) | Conversational chatbot with memory — chat back and forth with a local LLM that remembers the full conversation history. No API keys, no cloud. | Node.js, Ollama, llama3.2 |
 | 03 | [similarity-app](./similarity-app/) | Document Similarity Checker — compare two texts or rank a list by similarity using embeddings and cosine similarity math. No API keys, no cloud. | Node.js, Ollama, nomic-embed-text |
 | 04 | [finetune-app](./finetune-app/) | Fine-Tuning Demo — compare a base model vs a custom model built with a Modelfile. Understand how fine-tuning shapes model behavior. No API keys, no cloud. | Node.js, Ollama, llama3.2 |
+| 05 | [prompt-tester](./prompt-tester/) | Prompt Tester — test and compare prompts across local Ollama models and NVIDIA cloud models from a single API. | Node.js, Express, Ollama, NVIDIA API |
+| 06 | [desktop-analyzer](./desktop-analyzer/) | Desktop Personality Analyzer — upload a desktop screenshot and get an AI-generated analysis in serious, interview, or roast mode. | Node.js, Express, Multer, NVIDIA Vision API |
 | — | More coming soon... | | |
 
 ---
@@ -74,6 +78,8 @@ Each folder has its own `README.md` explaining what the project does and how to 
 - [x] Understood how cosine similarity works for semantic search
 - [x] Ran LLMs locally using Ollama
 - [x] Explored fine-tuning basics — base model vs custom model using Modelfile
+- [x] Built a prompt tester to compare outputs across local and cloud models
+- [x] Built an AI vision app that analyzes desktop screenshots with personality modes
 
 ### 🔄 In Progress
 - [ ] Exploring AI Agents and tool-use patterns
