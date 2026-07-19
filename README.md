@@ -66,7 +66,7 @@ Each folder has its own `README.md` explaining what the project does and how to 
 | 04 | [finetune-app](./finetune-app/) | Fine-Tuning Demo — compare a base model vs a custom model built with a Modelfile. Understand how fine-tuning shapes model behavior. No API keys, no cloud. | Node.js, Ollama, llama3.2 |
 | 05 | [prompt-tester](./prompt-tester/) | Prompt Tester — test and compare prompts across local Ollama models and NVIDIA cloud models from a single API. | Node.js, Express, Ollama, NVIDIA API |
 | 06 | [desktop-analyzer](./desktop-analyzer/) | Desktop Personality Analyzer — upload a desktop screenshot and get an AI-generated analysis in serious, interview, or roast mode. | Node.js, Express, Multer, NVIDIA Vision API |
-| 07 | [embedding-app](./[prompt-tester](./embedding-app)/) | Embedding Model Demo - A lightweight Node.js/Express microservice that generates text embeddings using a locally-running Ollama model. It wraps Ollama's embedding endpoint in a simple JSON API, making it easy to plug into RAG pipelines, semantic search systems, or any application that needs text-to-vector conversion without a cloud API. |
+| 07 | [embedding-app](./[embedding-app](./embedding-app)/) | Embedding Model Demo - A lightweight Node.js/Express microservice that generates text embeddings using a locally-running Ollama model. It wraps Ollama's embedding endpoint in a simple JSON API, making it easy to plug into RAG pipelines, semantic search systems, or any application that needs text-to-vector conversion without a cloud API. | Node.js, Express, Ollama, Nomic Embed Text Model |
 | — | More coming soon... | | |
 
 ---
